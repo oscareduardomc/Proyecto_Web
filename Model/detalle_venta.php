@@ -118,16 +118,20 @@ class detalle_venta
 		{
 			//Sentencia SQL para actualizar los datos.
 			$sql = "UPDATE detalle_venta SET
-						IdVenta          = ?,
-						Activo        = ?
-				    WHERE IdCredito = ?";
+						NumeroFactura          = ?,
+						CodigoProducto        = ?,
+                        Cantidad        = ?,
+                        Precio        = ?
+				    WHERE idregistro = ?";
 			//Ejecución de la sentencia a partir de un arreglo.
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-                        $data->IdVenta,
-						$data->Activo,
-						$data->IdCredito
+                        $data->NumeroFactura,
+						$data->CodigoProducto,
+						$data->Cantidad,
+                        $data->Precio,
+                        $data->idregistro
 					)
 				);
 		} catch (Exception $e)
