@@ -7,6 +7,7 @@
     <a class="btn btn-primary" href="?c=detalle_venta&a=Nuevo">Detalle Venta</a>
     <a class="btn btn-primary" href="?c=ventas_pos&a=Nuevo">POS</a>
     <a class="btn btn-primary" href="?c=ventas_sag&a=Nuevo">SAG</a>
+    <a class="btn btn-primary" href="?c=ventas_exenta&a=Nuevo">Orden</a>
 </div>
 
 <table class="table table-striped">

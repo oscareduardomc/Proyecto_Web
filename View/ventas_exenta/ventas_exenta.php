@@ -1,4 +1,4 @@
-<h1 class="page-header">SAG</h1>
+<h1 class="page-header">Orden</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=ventas_anuladas&a=Nuevo">Ventas Anuladas</a>
@@ -8,20 +8,21 @@
     <a class="btn btn-primary" href="?c=ventas_pos&a=Nuevo">POS</a>
     <a class="btn btn-primary" href="?c=ventas_constancia&a=Nuevo">Constancia</a>
     <a class="btn btn-primary" href="?c=ventas_sag&a=Nuevo">SAG</a>
+    <a class="btn btn-primary" href="?c=ventas_exenta&a=Nuevo">Orden</a>
 </div>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th style="width:180px;">N° Factura</th>
-            <th style="width:120px;">N° SAG</th>
+            <th style="width:120px;">N° Orden</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($this->model->Listar() as $r) : ?>
             <tr>
                 <td><?php echo $r->numero_factura; ?></td>
-                <td><?php echo $r->numero_sag; ?></td>
+                <td><?php echo $r->numero_orden; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
