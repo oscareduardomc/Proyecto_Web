@@ -4,7 +4,7 @@
 
 <ol class="breadcrumb">
   <li><a href="?c=detalle_venta">Detalle ID</a></li>
-  <li class="active"><?php echo $prod->idregistro != null ? $prod->isregistro : 'Nuevo Registro'; ?></li>
+  <li class="active"><?php echo $prod->idregistro != null ? $prod->idregistro : 'Nuevo Registro'; ?></li>
 </ol>
 
 <form id="frm-detalle_venta" action="?c=detalle_venta&a=Editar" method="post" enctype="multipart/form-data">

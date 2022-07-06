@@ -20,10 +20,17 @@
     <tbody>
         <?php foreach ($this->model->Listar() as $r) : ?>
             <tr>
-                <td><?php echo $r->idventa; ?></td>
-                <td><?php echo $r->usuario; ?></td>
-                <td><?php echo $r->descripcion; ?></td>
-                <td><?php echo $r->fechahora; ?></td>
+                <td><?php echo $r->idregistro; ?></td>
+                <td><?php echo $r->NumeroFactura; ?></td>
+                <td><?php echo $r->CodigoProducto; ?></td>
+                <td><?php echo $r->Cantidad; ?></td>
+                <td><?php echo $r->Precio; ?></td>
+                <td>
+                    <a href="?c=detalle_venta&a=Crud&idregistro=<?php echo $r->idregistro; ?>">Editar</a>
+                </td>
+                <td>
+                    <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=detalle_venta&a=Eliminar&idregistro=<?php echo $r->idregistro; ?>">Eliminar</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

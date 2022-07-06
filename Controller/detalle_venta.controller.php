@@ -39,8 +39,8 @@ class Detalle_VentaController{
     public function Guardar(){
         $prod = new detalle_venta();
 
-        $prod->idregistro = $_REQUEST['idregistro'];
         $prod->NumeroFactura = $_REQUEST['NumeroFactura'];
+        $prod->CodigoProducto = $_REQUEST['CodigoProducto'];
         $prod->Cantidad = $_REQUEST['Cantidad'];
         $prod->Precio = $_REQUEST['Precio'];
 
@@ -52,8 +52,8 @@ class Detalle_VentaController{
     public function Editar(){
         $prod = new detalle_venta();
 
-        $prod->idregistro = $_REQUEST['idregistro'];
         $prod->NumeroFactura = $_REQUEST['NumeroFactura'];
+        $prod->CodigoProducto = $_REQUEST['CodigoProducto'];
         $prod->Cantidad = $_REQUEST['Cantidad'];
         $prod->Precio = $_REQUEST['Precio'];
 
