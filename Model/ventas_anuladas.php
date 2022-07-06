@@ -57,32 +57,6 @@ class ventas_anuladas
 		}
 	}
 
-	//Método que actualiza una tupla a partir de la clausula
-	//Where y el nit del proveedor.
-	public function Actualizar($data)
-	{
-		try {
-			//Sentencia SQL para actualizar los datos.
-			$sql = "UPDATE ventas_anuladas SET
-						usuario          = ?,
-						descripcion        = ?,
-            			fechahora        = ?
-				    WHERE idventa = ?";
-			//Ejecución de la sentencia a partir de un arreglo.
-			$this->pdo->prepare($sql)
-				->execute(
-					array(
-						$data->ID,
-						$data->Usuario,
-						$data->Descripcion,
-						$data->Fecha
-					)
-				);
-		} catch (Exception $e) {
-			die($e->getMessage());
-		}
-	}
-
 	//Método que registra un nuevo proveedor a la tabla.
 	public function Registrar(ventas_anuladas $data)
 	{

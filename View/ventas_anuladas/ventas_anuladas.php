@@ -23,12 +23,6 @@
                 <td><?php echo $r->usuario; ?></td>
                 <td><?php echo $r->descripcion; ?></td>
                 <td><?php echo $r->fechahora; ?></td>
-                <td>
-                    <a href="?c=ventas_anuladas&a=Crud&ID=<?php echo $r->idventa; ?>">Editar</a>
-                </td>
-                <td>
-                    <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=ventas_anuladas&a=Eliminar&ID=<?php echo $r->idventa; ?>">Eliminar</a>
-                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
