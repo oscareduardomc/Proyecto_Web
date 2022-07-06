@@ -5,6 +5,7 @@
     <a class="btn btn-primary" href="?c=ventas&a=Nuevo">Nueva Venta</a>
     <a class="btn btn-primary" href="?c=venta_credito&a=Nuevo">Nuevo Credito</a>
     <a class="btn btn-primary" href="?c=detalle_venta&a=Nuevo">Detalle Venta</a>
+    <a class="btn btn-primary" href="?c=ventas_pos&a=Nuevo">POS</a>
 </div>
 
 <table class="table table-striped">

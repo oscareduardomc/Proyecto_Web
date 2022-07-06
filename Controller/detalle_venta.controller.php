@@ -65,8 +65,6 @@ class Detalle_VentaController{
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['idregistro']);
         header('Location: index.php');
-    }
-
-    
+    }  
 
 }
