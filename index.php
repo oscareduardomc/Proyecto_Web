@@ -1,12 +1,33 @@
 <?php
-require_once 'configuraciones/basedatos.php';
-require_once 'configuraciones/modeloBase.php';
-require_once 'configuraciones/app.php';
-require_once 'configuraciones/controladorBase.php';
-require_once 'configuraciones/vistaBase.php';
-require_once 'controladores/errores.php';
-$expira= time() + (3600*24*364);
-setcookie('nombre', "Carlos Flores Flores", $expira, "/");
-$app = new App();
+  //Se incluye la configuración de conexión a datos en el
+  //SGBD: MariaDB.
+  require_once 'model/database.php';
 
-?>
+  //Para registrar productos es necesario iniciar los proveedores
+  //de los mismos, por ello la variable controller para este
+  //ejercicio se inicia con el 'proveedor'.
+  $controller = 'ventas';
+
+  // Todo esta lógica hara el papel de un FrontController
+  if(!isset($_REQUEST['c']))
+  {
+    //Llamado de la página principal
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+    $controller->Index();
+  }
+  else
+  {
+    // Obtiene el controlador a cargar
+    $controller = strtolower($_REQUEST['c']);
+    $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+
+    // Instancia el controlador
+    require_once "controller/$controller.controller.php";
+    $controller = ucwords($controller) . 'Controller';
+    $controller = new $controller;
+
+    // Llama la accion
+    call_user_func( array( $controller, $accion ) );
+  }
