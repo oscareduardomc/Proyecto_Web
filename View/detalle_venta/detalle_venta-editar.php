@@ -29,8 +29,6 @@
         <label>Precio</label>
         <input type="text" name="Precio" value="<?php echo $prod->Precio; ?>" class="form-control" placeholder="Precio" data-validacion-tipo="requerido|min:100" />
     </div>
-
-
     <hr />
 
     <div class="text-right">

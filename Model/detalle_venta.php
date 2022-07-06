@@ -48,7 +48,7 @@ class detalle_venta
 
 	//Este método obtiene los datos del proveedor a partir del nit
 	//utilizando SQL.
-	public function Obtener($ID)
+	public function Obtener($idregistro)
 	{
 		try
 		{
@@ -56,7 +56,7 @@ class detalle_venta
 			//la clausula Where para especificar el nit del proveedor.
 			$stm = $this->pdo->prepare("SELECT * FROM detalle_venta WHERE idregistro = ?");
 			//Ejecución de la sentencia SQL utilizando el parámetro nit.
-			$stm->execute(array($ID));
+			$stm->execute(array($idregistro));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e)
 		{
