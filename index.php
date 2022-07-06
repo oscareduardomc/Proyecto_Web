@@ -3,7 +3,7 @@
   //SGBD: MariaDB.
   require_once 'model/database.php';
   
-  $controller = 'ventas';
+  $controller = 'principal';
 
   // Todo esta lógica hara el papel de un FrontController
   if(!isset($_REQUEST['c']))
