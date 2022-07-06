@@ -49,22 +49,4 @@ class Ventas_AnuladasController{
         header('Location: index.php?c=ventas_anuladas');
     }
 
-    public function Editar(){
-        $prod = new ventas_anuladas();
-
-        $prod->ID = $_REQUEST['ID'];
-        $prod->Usuario = $_REQUEST['Usuario'];
-        $prod->Descripcion = $_REQUEST['Descripcion'];
-        $prod->Fecha = $_REQUEST['Fecha'];
-
-        $this->model->Actualizar($prod);
-
-        header('Location: index.php?c=ventas_anuladas');
-    }
-
-    public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['ID']);
-        header('Location: index.php');
-    }
-
 }

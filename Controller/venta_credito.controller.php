@@ -19,8 +19,8 @@ class Venta_CreditoController{
     public function Crud(){
         $prod = new venta_credito();
 
-        if(isset($_REQUEST['idCredito'])){
-            $prod = $this->model->Obtener($_REQUEST['idCretido']);
+        if(isset($_REQUEST['IdCredito'])){
+            $prod = $this->model->Obtener($_REQUEST['IdCredito']);
         }
 
         require_once 'view/header.php';
@@ -57,7 +57,7 @@ class Venta_CreditoController{
 
         $this->model->Actualizar($prod);
 
-        header('Location: index.php?c=venta_Credito');
+        header('Location: index.php?c=venta_credito');
     }
 
     public function Eliminar(){

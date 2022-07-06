@@ -3,7 +3,6 @@
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=ventas_anuladas&a=Nuevo">Nueva Venta Anulada</a>
     <a class="btn btn-primary" href="?c=ventas&a=Nuevo">Nueva Venta</a>
-    <a class="btn btn-primary" href="?c=proveedor&a=Nuevo">Nuevo Proveedor</a>
     <a class="btn btn-primary" href="?c=venta_credito&a=Nuevo">Nuevo Credito</a>
 </div>
 

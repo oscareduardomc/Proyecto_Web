@@ -115,16 +115,16 @@ class venta_credito
 		{
 			//Sentencia SQL para actualizar los datos.
 			$sql = "UPDATE ventacredito SET
-						idVenta          = ?,
+						IdVenta          = ?,
 						Activo        = ?
-				    WHERE idCredito = ?";
+				    WHERE IdCredito = ?";
 			//Ejecución de la sentencia a partir de un arreglo.
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-                        $data->idCredito,
-                        $data->idVenta,
-                        $data->Activo
+                        $data->IdVenta,
+						$data->Activo,
+						$data->IdCredito
 					)
 				);
 		} catch (Exception $e)

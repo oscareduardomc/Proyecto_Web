@@ -42,21 +42,6 @@ class ventas_anuladas
 		}
 	}
 
-	//Este método elimina la tupla proveedor dado un nit.
-	public function Eliminar($ID)
-	{
-		try {
-			//Sentencia SQL para eliminar una tupla utilizando
-			//la clausula Where.
-			$stm = $this->pdo
-				->prepare("DELETE FROM ventas_anuladas WHERE idventa = ?");
-
-			$stm->execute(array($ID));
-		} catch (Exception $e) {
-			die($e->getMessage());
-		}
-	}
-
 	//Método que registra un nuevo proveedor a la tabla.
 	public function Registrar(ventas_anuladas $data)
 	{
