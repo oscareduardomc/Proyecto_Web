@@ -11,22 +11,22 @@
 
     <div class="form-group">
       <label>ID ventas</label>
-      <input type="text" name="ID" value="<?php echo $prod->ID; ?>" class="form-control" placeholder="ID venta" data-validacion-tipo="requerido|min:20" />
+      <input type="text" name="idventa" value="<?php echo $prod->idventa; ?>" class="form-control" placeholder="ID venta" data-validacion-tipo="requerido|min:20" />
     </div>
 
     <div class="form-group">
         <label>Usuario</label>
-        <input type="text" name="Usuario" value="<?php echo $prod->Usuario; ?>" class="form-control" placeholder="Usuario" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="usuario" value="<?php echo $prod->usuario; ?>" class="form-control" placeholder="Usuario" data-validacion-tipo="requerido|min:100" />
     </div>
 
     <div class="form-group">
         <label>Descripcion</label>
-        <input type="text" name="Descripcion" value="<?php echo $prod->Descripcion; ?>" class="form-control" placeholder="Descripcion" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="descripcion" value="<?php echo $prod->descripcion; ?>" class="form-control" placeholder="Descripcion" data-validacion-tipo="requerido|min:100" />
     </div>
 
     <div class="form-group">
         <label>Fecha</label>
-        <input type="text" name="Fecha" value="<?php echo $prod->Fecha; ?>" class="form-control" placeholder="Fecha" data-validacion-tipo="requerido|min:10" />
+        <input type="text" name="fechahora" value="<?php echo $prod->fechahora; ?>" class="form-control" placeholder="Fecha" data-validacion-tipo="requerido|min:10" />
     </div>
 
     <hr />

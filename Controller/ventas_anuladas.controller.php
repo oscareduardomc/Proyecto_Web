@@ -39,10 +39,10 @@ class Ventas_AnuladasController{
     public function Guardar(){
         $prod = new ventas_anuladas();
 
-        $prod->ID = $_REQUEST['ID'];
-        $prod->Usuario = $_REQUEST['Usuario'];
-        $prod->Descripcion = $_REQUEST['Descripcion'];
-        $prod->Fecha = $_REQUEST['Fecha'];
+        $prod->idventa = $_REQUEST['idventa'];
+        $prod->usuario = $_REQUEST['usuario'];
+        $prod->descripcion = $_REQUEST['descripcion'];
+        $prod->fechahora = $_REQUEST['fechahora'];
 
         $this->model->Registrar($prod);
 

@@ -3,10 +3,10 @@ class ventas_anuladas
 {
 	private $pdo;
 
-	public $ID;
-	public $Usuario;
-	public $Descripcion;
-	public $Fecha;
+	public $idventa;
+	public $usuario;
+	public $descripcion;
+	public $fechahora;
 
 	public function __CONSTRUCT()
 	{
@@ -31,11 +31,11 @@ class ventas_anuladas
 		}
 	}
 
-	public function Obtener($ID)
+	public function Obtener($idventa)
 	{
 		try {
 			$stm = $this->pdo->prepare("SELECT * FROM ventas_anuladas WHERE idventa = ?");
-			$stm->execute(array($ID));
+			$stm->execute(array($idventa));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) {
 			die($e->getMessage());
@@ -53,10 +53,10 @@ class ventas_anuladas
 			$this->pdo->prepare($sql)
 				->execute(
 					array(
-						$data->ID,
-						$data->Usuario,
-						$data->Descripcion,
-						$data->Fecha
+						$data->idventa,
+						$data->usuario,
+						$data->descripcion,
+						$data->fechahora
 					)
 				);
 		} catch (Exception $e) {

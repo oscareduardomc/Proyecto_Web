@@ -1,4 +1,4 @@
-<h1 class="page-header">Detalle Venta</h1>
+<h1 class="page-header">POS</h1>
 
 <div class="well well-sm text-right">
     <a class="btn btn-primary" href="?c=ventas_anuladas&a=Nuevo">Ventas Anuladas</a>
@@ -28,12 +28,6 @@
                 <td><?php echo $r->idpos; ?></td>
                 <td><?php echo $r->referencia; ?></td>
                 <td><?php echo $r->valor; ?></td>
-                <td>
-                    <a href="?c=ventas_pos&a=Crud&idregistro=<?php echo $r->idregistro; ?>">Editar</a>
-                </td>
-                <td>
-                    <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=ventas_pos&a=Eliminar&idregistro=<?php echo $r->idregistro; ?>">Eliminar</a>
-                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
