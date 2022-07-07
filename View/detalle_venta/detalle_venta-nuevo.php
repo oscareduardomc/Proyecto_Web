@@ -11,22 +11,22 @@
 
     <div class="form-group">
       <label>N° Factura</label>
-      <input type="text" name="NumeroFactura" value="<?php echo $prod->NumeroFactura; ?>" class="form-control" placeholder="N° Factura" data-validacion-tipo="requerido|min:20" />
+      <input type="text" name="NumeroFactura" value="<?php echo $prod->NumeroFactura; ?>" class="form-control" placeholder="N° Factura" data-validacion-tipo="requerido|min:20" required/>
     </div>
 
     <div class="form-group">
         <label>ID Producto</label>
-        <input type="text" name="CodigoProducto" value="<?php echo $prod->CodigoProducto; ?>" class="form-control" placeholder="ID Producto" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="CodigoProducto" value="<?php echo $prod->CodigoProducto; ?>" class="form-control" placeholder="ID Producto" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <div class="form-group">
         <label>Cantidad</label>
-        <input type="text" name="Cantidad" value="<?php echo $prod->Cantidad; ?>" class="form-control" placeholder="Cantidad" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="Cantidad" value="<?php echo $prod->Cantidad; ?>" class="form-control" placeholder="Cantidad" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <div class="form-group">
         <label>Precio</label>
-        <input type="text" name="Precio" value="<?php echo $prod->Precio; ?>" class="form-control" placeholder="Precio" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="Precio" value="<?php echo $prod->Precio; ?>" class="form-control" placeholder="Precio" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <hr />

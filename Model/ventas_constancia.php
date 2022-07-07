@@ -43,16 +43,16 @@ class ventas_constancia
 		}
 	}
 
-	//Este método obtiene los datos del proveedor a partir del nit
+	//Este método obtiene los datos del proveedor a partir del ID
 	//utilizando SQL.
 	public function Obtener($numero_factura)
 	{
 		try
 		{
 			//Sentencia SQL para selección de datos utilizando
-			//la clausula Where para especificar el nit del proveedor.
+			//la clausula Where para especificar el ID del proveedor.
 			$stm = $this->pdo->prepare("SELECT * FROM ventas_constancia WHERE numero_factura = ?");
-			//Ejecución de la sentencia SQL utilizando el parámetro nit.
+			//Ejecución de la sentencia SQL utilizando el parámetro ID.
 			$stm->execute(array($numero_factura));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e)

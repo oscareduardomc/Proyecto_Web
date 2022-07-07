@@ -11,12 +11,12 @@
 
     <div class="form-group">
       <label>N° Factura</label>
-      <input type="text" name="numero_factura" value="<?php echo $prod->numero_factura; ?>" class="form-control" placeholder="N° Factura" data-validacion-tipo="requerido|min:20" />
+      <input type="text" name="numero_factura" value="<?php echo $prod->numero_factura; ?>" class="form-control" placeholder="N° Factura" data-validacion-tipo="requerido|min:20" required />
     </div>
 
     <div class="form-group">
         <label>N° Constancia</label>
-        <input type="text" name="numero_constancia" value="<?php echo $prod->numero_constancia; ?>" class="form-control" placeholder="N° Constancia" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="numero_constancia" value="<?php echo $prod->numero_constancia; ?>" class="form-control" placeholder="N° Constancia" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <hr />

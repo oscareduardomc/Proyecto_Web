@@ -11,17 +11,17 @@
 
     <div class="form-group">
       <label>ID Credito</label>
-      <input type="text" name="IdCredito" value="<?php echo $prod->IdCredito; ?>" class="form-control" placeholder="ID Credito" data-validacion-tipo="requerido|min:20" />
+      <input type="text" name="IdCredito" value="<?php echo $prod->IdCredito; ?>" class="form-control" placeholder="ID Credito" data-validacion-tipo="requerido|min:20" required/>
     </div>
 
     <div class="form-group">
         <label>ID Venta</label>
-        <input type="text" name="IdVenta" value="<?php echo $prod->IdVenta; ?>" class="form-control" placeholder="ID Venta" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="IdVenta" value="<?php echo $prod->IdVenta; ?>" class="form-control" placeholder="ID Venta" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <div class="form-group">
         <label>Activo</label>
-        <input type="text" name="Activo" value="<?php echo $prod->Activo; ?>" class="form-control" placeholder="Activo" data-validacion-tipo="requerido|min:100" />
+        <input type="text" name="Activo" value="<?php echo $prod->Activo; ?>" class="form-control" placeholder="Activo" data-validacion-tipo="requerido|min:100" required/>
     </div>
 
     <hr />

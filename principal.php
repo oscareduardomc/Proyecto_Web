@@ -21,8 +21,7 @@
 		<p class="text-list" style="font-size: 1rem; font-weight: 600;">Santos Orellaba</p>
 
 		<div class="button">
-			<a href="index.php" class="btn">VENTAS</a>
-			
+			<a href="index.php" class="btn">VENTAS</a>	
 		</div>
 	</div>
 </body>
