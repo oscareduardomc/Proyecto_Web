@@ -19,6 +19,7 @@
 		<p class="text-list" style="font-size: 1rem; font-weight: 600;">Oscar David Martinez</p>
 		<p class="text-list" style="font-size: 1rem; font-weight: 600;">Ana Marcela Paz</p>
 		<p class="text-list" style="font-size: 1rem; font-weight: 600;">Santos Orellaba</p>
+		<p class="text-list" style="font-size: 1rem; font-weight: 600;">Roberto Funez</p>
 
 		<div class="button">
 			<a href="index.php" class="btn">VENTAS</a>	

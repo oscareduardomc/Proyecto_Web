@@ -64,6 +64,8 @@ class VentasController{
         //también devuelve el código de status (302) REDIRECT al
         //navegador
         header('Location: index.php');
+
+        setcookie("Venta","IdVenta", time() + 84600);
     }
 
 }
