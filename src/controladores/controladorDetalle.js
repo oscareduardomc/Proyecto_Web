@@ -42,10 +42,14 @@ exports.Listar = async (req, res) => {   //Esta es listar
     req.getConnection((err, conn) => {
       if (err) return res.send(err)
 
-      conn.query('SELECT * FROM detalle_venta', (err, rows) => {
+      conn.query('select idregistro, NumeroFactura, CodigoProducto, Cantidad, Precio, impuesto from detalle_venta', (err, rows) => {
         if (err) return res.send(err)
 
         res.json(rows)
+        res.render('detalleListar', {
+          titulo: 'Detalle',
+          rows,
+      });
       })
     })
   } catch (error) {
