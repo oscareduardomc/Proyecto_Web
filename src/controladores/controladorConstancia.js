@@ -112,12 +112,16 @@ exports.Guardar = async (req, res) => {
 
     const {  numero_constancia } = await req.body;  // const { nombre } = req.body;
   
-          const pos = await Ventas_Constancia.create({
+          const constancia = await Ventas_Constancia.create({
   
             numero_constancia
 
           }).catch(error=>console.log(error));
-          console.log(pos)
+          console.log(constancia)
         await res.redirect('http://localhost:4306/app/constancia/listar');
+};
+
+exports.create = async (req, res) => {
+  res.render('constanciaGuardar')
 };
   

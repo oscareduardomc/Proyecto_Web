@@ -6,4 +6,6 @@ const rutas = Router();
 
 rutas.get('/listar', ControladorAnuladas.Listar);
 rutas.post('/guardar', ControladorAnuladas.Guardar);
+rutas.get('/create', ControladorAnuladas.create);
+
 module.exports = rutas;

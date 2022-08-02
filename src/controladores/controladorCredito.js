@@ -109,13 +109,13 @@ exports.Guardar = async (req, res) => {
     // }
     // res.json(msj);
 
-    const {  IdCredito, IdVenta, Activo } = await req.body;  // const { nombre } = req.body;
+    const { IdVenta, Activo } = await req.body;  // const { nombre } = req.body;
   
           const credito = await Ventas_Credito.create({
   
-            IdCredito,
             IdVenta,
             Activo
+            
           }).catch(error=>console.log(error));
           console.log(credito)
         await res.redirect('http://localhost:4306/app/credito/listar');

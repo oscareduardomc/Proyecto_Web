@@ -40,19 +40,19 @@
                         {{#each lista}}
                       <tr>
                       <td>
-                        {{this.dataValues.id}}
+                        {{this.dataValues.idregistro}}
                       </td>
                       <td>
-                        {{this.dataValues.numeroFactura}}
+                        {{this.dataValues.NumeroFactura}}
                       </td>
                       <td>
-                        {{this.dataValues.codigoProducto}}
+                        {{this.dataValues.CodigoProducto}}
                       </td>
                       <td>
-                        {{this.dataValues.cantidad}}
+                        {{this.dataValues.Cantidad}}
                       </td>
                       <td>
-                        {{this.dataValues.precio}}
+                        {{this.dataValues.Precio}}
                       </td>
                       <td>
                         {{this.dataValues.impuesto}}
@@ -60,7 +60,6 @@
                       <td>
                         <a href="http://localhost:4306/app/detalle/modificar/{{this.dataValues.id}}"  class="nav-icon fas fa-pen"></a>
                         <a href="http://localhost:4306/app/detalle/modificar/{{this.dataValues.id}}" style="margin-left: 0.5rem;" class="nav-icon fas fa-trash"></a>
-                        
                       </td>
                       </tr>
                       
@@ -72,7 +71,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                  <a href="http://localhost:4306/app/detalle/create" class="btn btn-sm btn-info float-left">Generar nuevo pedido</a>
+                  <a href="/app/detalle/create/" class="btn btn-sm btn-info float-left">Generar nuevo pedido</a>
                   <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Buscar pedido</a>
                 </div>
                 <!-- /.card-footer -->

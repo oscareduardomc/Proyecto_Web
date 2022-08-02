@@ -6,7 +6,7 @@ const VentasCredito = db.define(
         IdCredito:{
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: false,
+            autoIncrement: true,
             allowNull: false,
             field: 'IdCredito' //Nombre del campo en la base de datos
         },

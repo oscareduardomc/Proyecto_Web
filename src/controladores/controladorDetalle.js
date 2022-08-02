@@ -51,7 +51,7 @@ exports.Actualizar = async (req, res) => {
 }
 
 exports.create = async (req, res) => {
-  res.render('createDetalle')
+  res.render('detalleGuardar')
 }
 exports.Modificar = async (req, res) => {
   const {id} = await req.params;
@@ -66,17 +66,18 @@ exports.Modificar = async (req, res) => {
 
 exports.Guardar = async (req, res) => {
 
-  const {  cantidad, impuesto, grabadoExento, numeroFactura, codigoProducto, precio, preciooriginal } = await req.body;  
+  const {  NumeroFactura, CodigoProducto, Cantidad, Precio, preciooriginal, impuesto, grabadoExento} = await req.body;  
   
         const detalle = await Detalle.create({
 
-          cantidad,
-          numeroFactura,
-          codigoProducto,
-          precio,
+          NumeroFactura,
+          CodigoProducto,
+          Cantidad,
+          Precio,
           preciooriginal,
           impuesto,
           grabadoExento
+          
         }).catch(error=>console.log(error));
         console.log(detalle)
       await res.redirect('http://localhost:4306/app/detalle/listar');

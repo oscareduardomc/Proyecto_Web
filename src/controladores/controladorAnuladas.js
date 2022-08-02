@@ -81,4 +81,8 @@ exports.Guardar = async (req, res) => {
           }).catch(error=>console.log(error));
           console.log(pos)
         await res.redirect('http://localhost:4306/app/anuladas/listar');
-    }
+};
+
+exports.create = async (req, res) => {
+  res.render('anuladasGuardar')
+};

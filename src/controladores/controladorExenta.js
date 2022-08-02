@@ -110,11 +110,10 @@ exports.Guardar = async (req, res) => {
     // }
     // res.json(msj);
 
-    const {  numero_factura, numero_orden } = await req.body;  // const { nombre } = req.body;
+    const { numero_orden } = await req.body;  // const { nombre } = req.body;
   
           const exenta = await Ventas_Exenta.create({
   
-            numero_factura,
             numero_orden
 
           }).catch(error=>console.log(error));

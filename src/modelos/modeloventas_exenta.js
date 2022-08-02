@@ -6,7 +6,7 @@ const VentasExenta = db.define(
         numero_factura:{
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: false,
+            autoIncrement: true,
             allowNull: false,
             field: 'numero_factura' //Nombre del campo en la base de datos
         },
