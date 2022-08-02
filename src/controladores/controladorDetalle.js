@@ -53,6 +53,7 @@ exports.Actualizar = async (req, res) => {
 exports.create = async (req, res) => {
   res.render('detalleGuardar')
 }
+
 exports.Modificar = async (req, res) => {
   const {id} = await req.params;
   const detalle = await Detalle.findOne({

@@ -23,8 +23,6 @@ const dbOptions = {
 
 app.use(myconn(mysql, dbOptions, 'single'))
 
-
-
 app.use('/app/', require('./rutas/index'));
 app.use('/app/detalle', require('./rutas/RutasDetalle'));
 app.use('/app/sag', require('./rutas/rutasSag'));
@@ -35,9 +33,6 @@ app.use('/app/exenta', require('./rutas/rutasExenta'));
 app.use('/app/pos', require('./rutas/rutasPos'));
 app.use('/app/anuladas', require('./rutas/rutasAnuladas'));
 app.set('port',4306); 
-
-
-
 
 app.listen(app.get('port'), () => {  
     console.log('Servidor iniciado en el puerto ' + app.get('port'));
