@@ -97,47 +97,13 @@ exports.Guardar = async (req, res) => {
 
 
 exports.Eliminar = async(req, res) => {
-  const validaciones = validationResult(req);
-  console.log(validaciones.errors[0]);
-  console.log(req.body);
-  const { id } = req.query;
-  const msj = {
-
-      mensaje: ""
-
-  };
-
-  if (validaciones.errors.length > 0) {
-      validaciones.errors.forEach(element => {
-          msj.mensaje += element.msg + ' . ';
-
-      });
-
-  } else {
-      try {
-          var buscarDetalle = await Detalle.findOne({
-              where: {
-                  id: id
-              }
-
-          });
-          if (!buscarDetalle) {
-              msj.mensaje = 'No Existe el ID Del Registro';
-          } else {
-              await buscarDetalle.destroy({
-                  where: {
-                      id: id
-                  }
-
-              });
-
-              msj.mensaje = 'Registro Eliminado correctamente';
-          }
-      } catch (error) {
-          console.error(error);
-          msj.mensaje = 'ERROR!! Al Eliminar los Datos ';
-      }
-
-  }
-  res.json(msj);
+  const {idregistro} = await req.params;
+  const detalle = await Detalle.destroy({
+    where:{
+      idregistro:idregistro
+    },
+    raw:true
+  }).catch(error=>console.log(error))
+  
+  res.render('http://localhost:4306/app/detalle/listar')
 };
