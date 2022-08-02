@@ -33,7 +33,16 @@ function validacion(req) {
 
 
 //LISTAR
-
+exports.Buscar = async (req, res) => { 
+  const {id} = await req.params;
+  const credito = await Ventas_Credito.findOne({
+    where:{
+      id:id
+    },
+    raw:true
+  }).catch(error=>console.log(error))
+  res.render('creditoBuscar', {credito})
+}
 exports.Listar = async (req, res) => {   //Esta es listar 
     // var msj = {
     //   mensaje: ''

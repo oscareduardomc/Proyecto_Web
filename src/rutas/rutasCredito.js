@@ -7,5 +7,6 @@ const rutas = Router();
 rutas.get('/listar', ControladorCredito.Listar);
 rutas.post('/guardar', ControladorCredito.Guardar);
 rutas.get('/create', ControladorCredito.create);
+rutas.get('/buscar/:id', ControladorCredito.Buscar);
 
 module.exports = rutas;
