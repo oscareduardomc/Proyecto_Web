@@ -59,7 +59,7 @@
                       </td>
                       <td>
                         <a href="http://localhost:4306/app/detalle/modificar/{{this.dataValues.idregistro}}"  class="nav-icon fas fa-pen"></a>
-                        <a href="http://localhost:4306/app/detalle/modificar/{{this.dataValues.id}}" style="margin-left: 0.5rem;" class="nav-icon fas fa-trash"></a>
+                        <a onclick="return confirm('Seguro que quieres eliminar el registro ID: {{this.dataValues.idregistro}} con Numero Factura: {{this.dataValues.NumeroFactura}}?')" href="http://localhost:4306/app/detalle/eliminar/{{this.dataValues.idregistro}}" style="margin-left: 0.5rem;" class="nav-icon fas fa-trash"></a>
                       </td>
                       </tr>
                       
