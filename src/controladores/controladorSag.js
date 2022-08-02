@@ -35,27 +35,35 @@ function validacion(req) {
 //LISTAR
 
 exports.Listar = async (req, res) => {   //Esta es listar 
-    var msj = {
-      mensaje: ''
-    }
-    try {
+    // var msj = {
+    //   mensaje: ''
+    // }
+    // try {
   
   
-      req.getConnection((err, conn) => {
-        if (err) return res.send(err)
+    //   req.getConnection((err, conn) => {
+    //     if (err) return res.send(err)
   
-        conn.query('SELECT * FROM ventas_sag', (err, rows) => {
-          if (err) return res.send(err)
+    //     conn.query('SELECT * FROM ventas_sag', (err, rows) => {
+    //       if (err) return res.send(err)
   
-          res.json(rows)
-        })
-      })
-    } catch (error) {
-      console.error(error);
-      msj.mensaje = (error);
-      msj.mensaje = 'Ocurrio un error';
-      res.json(msj);
-    }
+    //       res.json(rows)
+    //     })
+    //   })
+    // } catch (error) {
+    //   console.error(error);
+    //   msj.mensaje = (error);
+    //   msj.mensaje = 'Ocurrio un error';
+    //   res.json(msj);
+    // }
+
+    const lista = await Ventas_Sag.findAll();
+    // res.json(lista);
+    console.log(lista)
+    res.render('sagListar', {
+      titulo: 'SAG',
+      lista,
+    });
 }
 
 //GUARDAR
