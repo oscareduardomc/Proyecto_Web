@@ -1,0 +1,87 @@
+<form action="http://localhost:4306/app/ventas/guardar" method="post">
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput">N° Factura</label>
+    <input type="number" class="form-control" name="numero_factura" id="numero_factura" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">ID Cai</label>
+    <input type="number" class="form-control" name="idcai" id="idcai" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">ID Cliente</label>
+    <input type="number" class="form-control" name="idCliente" id="idCliente" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Tipo de pago</label>
+    <input type="text" class="form-control" name="TipoPago" id="TipoPago">
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Usu</label>
+    <input type="number" class="form-control" name="Usu" id="Usu" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Efectivo</label>
+    <input type="number" class="form-control" name="TEfectivo" id="TEfectivo" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Tarjeta</label>
+    <input type="number" class="form-control" name="TTarjeta" id="TTarjeta" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Mesero</label>
+    <input type="number" class="form-control" name="Mesero" id="Mesero" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Descuento de tercera edad</label>
+    <input type="number" class="form-control" name="DescuentoTercera" id="DescuentoTercera">
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Descuento</label>
+    <input type="number" class="form-control" name="Descuento" id="Descuento" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Anular</label>
+    <input type="number" class="form-control" name="Anular" id="Anular" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Cierre</label>
+    <input type="number" class="form-control" name="cierre" id="cierre" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Estacion</label>
+    <input type="number" class="form-control" name="Estacion" id="Estacion" required>
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Fecha y hora</label>
+    <input type="date" class="form-control" name="fechahoraini" id="fechahoraini" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Fecha y hora</label>
+    <input type="date" class="form-control" name="fechahora" id="fechahora" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Propina</label>
+    <input type="number" class="form-control" name="propina" id="propina" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Total</label>
+    <input type="number" class="form-control" name="totalventa" id="totalventa" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Exento</label>
+    <input type="number" class="form-control" name="Exento" id="Exento" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Impuesto 15</label>
+    <input type="number" class="form-control" name="Impuesto15" id="Impuesto15" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Impuesto 18</label>
+    <input type="number" class="form-control" name="Impuesto18" id="Impuesto18" >
+  </div>
+  <div class="form-group col-12">
+    <label for="formGroupExampleInput2">Exonerado</label>
+    <input type="number" class="form-control" name="Exonerado" id="Exonerado" >
+  </div>
+  <button onclick="alerta()" type="submit" class="btn btn-primary m-2 col-2">Guardar</button>
+</form>

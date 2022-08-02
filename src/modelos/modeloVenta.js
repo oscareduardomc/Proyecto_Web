@@ -10,7 +10,7 @@ const Venta = db.define(
             allowNull: false,
             field: 'idregistro' //Nombre del campo en la base de datos
         },
-        numeroFactura:{
+        NumeroFactura:{
             type: DataTypes.INTEGER(11),
             allowNull: false,
             field: 'NumeroFactura' //Nombre del campo en la base de datos
@@ -25,10 +25,10 @@ const Venta = db.define(
             allowNull: false,
             field: 'idCliente' //Nombre del campo en la base de datos
         },
-        tipoPago:{
+        TipoPago:{
             type: DataTypes.ENUM('Contado','Credito'),
             allowNull: false,
-            field: 'tipoPago' //Nombre del campo en la base de datos
+            field: 'TipoPago' //Nombre del campo en la base de datos
         },
         Usu:{
             type: DataTypes.INTEGER,

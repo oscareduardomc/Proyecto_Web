@@ -112,16 +112,16 @@ exports.Guardar = async (req, res) => {
 
     const {  numero_factura, numero_sag } = await req.body;  // const { nombre } = req.body;
   
-          const pos = await Ventas_Sag.create({
+          const sag = await Ventas_Sag.create({
   
             numero_factura,
             numero_sag
 
           }).catch(error=>console.log(error));
-          console.log(pos)
+          console.log(sag)
         await res.redirect('http://localhost:4306/app/sag/listar');
 };
 
 exports.create = async (req, res) => {
   res.render('sagGuardar')
-}
+};

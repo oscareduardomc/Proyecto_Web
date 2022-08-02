@@ -110,17 +110,18 @@ exports.Guardar = async (req, res) => {
     // }
     // res.json(msj);
 
-    const {  numero_orden } = await req.body;  // const { nombre } = req.body;
+    const {  numero_factura, numero_orden } = await req.body;  // const { nombre } = req.body;
   
-          const pos = await Ventas_Exenta.create({
+          const exenta = await Ventas_Exenta.create({
   
+            numero_factura,
             numero_orden
 
           }).catch(error=>console.log(error));
-          console.log(pos)
+          console.log(exenta)
         await res.redirect('http://localhost:4306/app/exenta/listar');
 };
 
 exports.create = async (req, res) => {
   res.render('exentaGuardar')
-}
+};

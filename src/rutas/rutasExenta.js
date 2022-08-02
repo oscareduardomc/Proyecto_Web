@@ -7,4 +7,5 @@ const rutas = Router();
 rutas.get('/listar', ControladorExenta.Listar);
 rutas.post('/guardar', ControladorExenta.Guardar);
 rutas.get('/create', ControladorExenta.create);
+
 module.exports = rutas;

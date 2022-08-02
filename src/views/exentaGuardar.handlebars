@@ -1,7 +1,11 @@
 <form action="http://localhost:4306/app/exenta/guardar" method="post">
+<div class="form-group col-12">
+    <label for="formGroupExampleInput2">N° Factura</label>
+    <input type="number" class="form-control" name="numero_factura" id="numero_factura" required>
+  </div>
   <div class="form-group col-12">
     <label for="formGroupExampleInput2">N° Orden</label>
-    <input type="number" class="form-control" name="numero_orden" id="numero_orden" required>
+    <input type="text" class="form-control" name="numero_orden" id="numero_orden" required>
   </div>
   <button onclick="alerta()" type="submit" class="btn btn-primary m-2 col-2">Guardar</button>
 </form>

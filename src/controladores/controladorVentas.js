@@ -69,11 +69,6 @@ exports.Listar = async (req, res) => {   //Esta es listar
 }
 
 
-exports.create = async (req, res) => {
-  res.render('createDetalle')
-}
-
-
 exports.Guardar = async (req, res) => {
   // const validaciones = validationResult(req);
   // console.log(validaciones.errors[0]);
@@ -137,14 +132,14 @@ exports.Guardar = async (req, res) => {
   // }
   // res.json(msj);
 
-  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEfectivo, TTarjeta, Mesero, DescuentoTercera, Descuento, Anular, cierre, Estacion, fechahoraini, fechahora, propina, totalventa, Exento, Impuesto15, Impuesto18, Exonerado } = await req.body;  // const { nombre } = req.body;
+  const {  NumeroFactura, idcai, idCliente, TipoPago, Usu, TEfectivo, TTarjeta, Mesero, DescuentoTercera, Descuento, Anular, cierre, Estacion, fechahoraini, fechahora, propina, totalventa, Exento, Impuesto15, Impuesto18, Exonerado } = await req.body;  // const { nombre } = req.body;
   
-          const pos = await Ventas_Anuladas.create({
+          const ventas = await Ventas.create({
   
-            numeroFactura,
+            NumeroFactura,
             idcai,
             idCliente,
-            tipoPago,
+            TipoPago,
             Usu,
             TEfectivo,
             TTarjeta,
@@ -164,6 +159,11 @@ exports.Guardar = async (req, res) => {
             Exonerado
 
           }).catch(error=>console.log(error));
-          console.log(pos)
+          console.log(ventas)
         await res.redirect('http://localhost:4306/app/ventas/listar');
 };
+
+
+exports.create = async (req, res) => {
+  res.render('ventaGuardar')
+}
