@@ -26,7 +26,6 @@ app.use(myconn(mysql, dbOptions, 'single'))
 
 
 app.use('/app/', require('./rutas/index'));
-app.use('/app/cargos', require('./rutas/rutasCargos'));
 app.use('/app/detalle', require('./rutas/RutasDetalle'));
 app.use('/app/sag', require('./rutas/rutasSag'));
 app.use('/app/constancia', require('./rutas/rutasConstancia'));
