@@ -8,7 +8,7 @@
 //     });
 // }
 exports.Inicio = (req, res) =>{
-    const titulo = 'Este es el inicio';
+    const titulo = '¡Bienvenido!';
     res.render('inicio', {
         titulo,
     });
