@@ -137,7 +137,7 @@ exports.Guardar = async (req, res) => {
   // }
   // res.json(msj);
 
-  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEfectivo, TTarjeta, Mesero, Estacion } = await req.body;  // const { nombre } = req.body;
+  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEfectivo, TTarjeta, Mesero, DescuentoTercera, Descuento, Anular, cierre, Estacion, fechahoraini, fechahora, propina, totalventa, Exento, Impuesto15, Impuesto18, Exonerado } = await req.body;  // const { nombre } = req.body;
   
           const pos = await Ventas_Anuladas.create({
   
@@ -149,7 +149,19 @@ exports.Guardar = async (req, res) => {
             TEfectivo,
             TTarjeta,
             Mesero,
-            Estacion
+            DescuentoTercera,
+            Descuento,
+            Anular,
+            cierre,
+            Estacion,
+            fechahoraini,
+            fechahora,
+            propina,
+            totalventa,
+            Exento,
+            Impuesto15,
+            Impuesto18,
+            Exonerado
 
           }).catch(error=>console.log(error));
           console.log(pos)
