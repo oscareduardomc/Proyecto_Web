@@ -75,65 +75,83 @@ exports.create = async (req, res) => {
 
 
 exports.Guardar = async (req, res) => {
-  const validaciones = validationResult(req);
-  console.log(validaciones.errors[0]);
-  console.log(req.body);
-  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEefectivo, tarjeta, mesero, estacion } = await req.body;  // const { nombre } = req.body;
-  var msj = {
-    mensaje: ''
-  };
-  if (validaciones.errors.length > 0) {
-    validaciones.errors.forEach(element => {
-      msj.mensaje += element.msg + ' . ';
+  // const validaciones = validationResult(req);
+  // console.log(validaciones.errors[0]);
+  // console.log(req.body);
+  // const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEefectivo, tarjeta, mesero, estacion } = await req.body;  // const { nombre } = req.body;
+  // var msj = {
+  //   mensaje: ''
+  // };
+  // if (validaciones.errors.length > 0) {
+  //   validaciones.errors.forEach(element => {
+  //     msj.mensaje += element.msg + ' . ';
 
-    });
+  //   });
 
-  } else {
-    try {
-      if (!numeroFactura) {
-        await Ventas.create({
-          numeroFactura,
+  // } else {
+  //   try {
+  //     if (!numeroFactura) {
+  //       await Ventas.create({
+  //         numeroFactura,
 
-        });
-      } else {
-        await Ventas.create({
-          numeroFactura,
-          idcai,
-          idCliente,
-          tipoPago,
-          Usu,
-          TEefectivo,
-          tarjeta,
-          mesero,
-          estacion
-        });
-      }
+  //       });
+  //     } else {
+  //       await Ventas.create({
+  //         numeroFactura,
+  //         idcai,
+  //         idCliente,
+  //         tipoPago,
+  //         Usu,
+  //         TEefectivo,
+  //         tarjeta,
+  //         mesero,
+  //         estacion
+  //       });
+  //     }
 
-      msj.mensaje = 'Registro Guardado correctamente';
-      console.log(numeroFactura)
-      console.log(idcai)
-      console.log(idCliente)
-      console.log(tipoPago)
-      console.log(Usu)
-      console.log(efectivo)
-      console.log(tarjeta)
-      console.log(mesero)
-      console.log(estacion)
+  //     msj.mensaje = 'Registro Guardado correctamente';
+  //     console.log(numeroFactura)
+  //     console.log(idcai)
+  //     console.log(idCliente)
+  //     console.log(tipoPago)
+  //     console.log(Usu)
+  //     console.log(efectivo)
+  //     console.log(tarjeta)
+  //     console.log(mesero)
+  //     console.log(estacion)
       
-    } catch (error) {
-      console.error(error);
-      msj.mensaje = 'Error Al Guardar los Datos ';
-      console.log(numeroFactura)
-      console.log(idcai)
-      console.log(idCliente)
-      console.log(tipoPago)
-      console.log(Usu)
-      console.log(efectivo)
-      console.log(tarjeta)
-      console.log(mesero)
-      console.log(estacion)
-    }
+  //   } catch (error) {
+  //     console.error(error);
+  //     msj.mensaje = 'Error Al Guardar los Datos ';
+  //     console.log(numeroFactura)
+  //     console.log(idcai)
+  //     console.log(idCliente)
+  //     console.log(tipoPago)
+  //     console.log(Usu)
+  //     console.log(efectivo)
+  //     console.log(tarjeta)
+  //     console.log(mesero)
+  //     console.log(estacion)
+  //   }
 
-  }
-  res.json(msj);
+  // }
+  // res.json(msj);
+
+  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEfectivo, TTarjeta, Mesero, Estacion } = await req.body;  // const { nombre } = req.body;
+  
+          const pos = await Ventas_Anuladas.create({
+  
+            numeroFactura,
+            idcai,
+            idCliente,
+            tipoPago,
+            Usu,
+            TEfectivo,
+            TTarjeta,
+            Mesero,
+            Estacion
+
+          }).catch(error=>console.log(error));
+          console.log(pos)
+        await res.redirect('http://localhost:4306/app/ventas/listar');
 };

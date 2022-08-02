@@ -3,7 +3,7 @@ const db = require('../configuracion/db');
 const Venta = db.define(
     'ventas',
     {
-        id:{
+        idregistro:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -35,32 +35,32 @@ const Venta = db.define(
             allowNull: false,
             field: 'Usu' //Nombre del campo en la base de datos
         },
-        efectivo:{
+        TEfectivo:{
             type: DataTypes.DOUBLE,
             allowNull: false,
             field: 'TEfectivo' //Nombre del campo en la base de datos
         },
-        tarjeta:{
+        TTarjeta:{
             type: DataTypes.DOUBLE,
             allowNull: false,
             field: 'TTarjeta' //Nombre del campo en la base de datos
         },
-        mesero:{
+        Mesero:{
             type: DataTypes.INTEGER(11),
             allowNull: false,
             field: 'Mesero' //Nombre del campo en la base de datos
         },
-        descuentoTercera:{
+        DescuentoTercera:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'DescuentoTercera' //Nombre del campo en la base de datos
         },
-        descuento:{
+        Descuento:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'Descuento' //Nombre del campo en la base de datos
         },
-        anular:{
+        Anular:{
             type: DataTypes.TINYINT(4),
             allowNull: true,
             field: 'Anular' //Nombre del campo en la base de datos
@@ -70,17 +70,17 @@ const Venta = db.define(
             allowNull: true,
             field: 'cierre' //Nombre del campo en la base de datos
         },
-        estacion:{
+        Estacion:{
             type: DataTypes.INTEGER(11),
             allowNull: false,
-            field: 'TTarjeta' //Nombre del campo en la base de datos
+            field: 'Estacion' //Nombre del campo en la base de datos
         },
-        fechaHoraIni:{
+        fechahoraini:{
             type: DataTypes.DATE,
             allowNull: true,
             field: 'fechahoraini' //Nombre del campo en la base de datos
         },
-        fechaHora:{
+        fechahora:{
             type: DataTypes.DATE,
             allowNull: true,
             field: 'fechahora' //Nombre del campo en la base de datos
@@ -90,27 +90,27 @@ const Venta = db.define(
             allowNull: true,
             field: 'propina' //Nombre del campo en la base de datos
         },
-        totalVenta:{
+        totalventa:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'totalventa' //Nombre del campo en la base de datos
         },
-        exento:{
+        Exento:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'Exento' //Nombre del campo en la base de datos
         },
-        impuesto15:{
+        Impuesto15:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'Impuesto15' //Nombre del campo en la base de datos
         },
-        impuesto18:{
+        Impuesto18:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'Impuesto18' //Nombre del campo en la base de datos
         },
-        exonerado:{
+        Exonerado:{
             type: DataTypes.DOUBLE,
             allowNull: true,
             field: 'Exonerado' //Nombre del campo en la base de datos

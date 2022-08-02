@@ -68,8 +68,6 @@ exports.Listar = async (req, res) => {   //Esta es listar
 
 //GUARDAR
 
-
-
 exports.Guardar = async (req, res) => {
 
     const {  usuario, descripcion, fechahora } = await req.body;  // const { nombre } = req.body;
