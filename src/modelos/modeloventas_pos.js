@@ -10,10 +10,10 @@ const ventas_pos = db.define(
             allowNull: false,
             field: 'idRegistro' //Nombre del campo en la base de datos
         },
-        idVenta:{
+        idventa:{
             type: DataTypes.INTEGER,
             allowNull: false,
-            field: 'idVenta' //Nombre del campo en la base de datos
+            field: 'idventa' //Nombre del campo en la base de datos
         },
         idpos:{
             type: DataTypes.INTEGER,

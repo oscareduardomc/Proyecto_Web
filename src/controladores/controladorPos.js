@@ -72,11 +72,11 @@ exports.Listar = async (req, res) => {   //Esta es listar
 
 exports.Guardar = async (req, res) => {
 
-    const {  idVenta, idpos, referencia, numerotarjeta, valor, nombrepropietario, idmarca } = await req.body;  // const { nombre } = req.body;
+    const {  idventa, idpos, referencia, numerotarjeta, valor, nombrepropietario, idmarca } = await req.body;  // const { nombre } = req.body;
   
           const pos = await Ventas_Pos.create({
   
-            idVenta,
+            idventa,
             idpos,
             referencia,
             numerotarjeta,
@@ -86,4 +86,8 @@ exports.Guardar = async (req, res) => {
           }).catch(error=>console.log(error));
           console.log(pos)
         await res.redirect('http://localhost:4306/app/pos/listar');
+    }
+
+    exports.create = async (req, res) => {
+      res.render('posGuardar')
     }

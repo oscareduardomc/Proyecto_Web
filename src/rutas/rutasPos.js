@@ -6,4 +6,5 @@ const rutas = Router();
 
 rutas.get('/listar', ControladorPos.Listar);
 rutas.post('/guardar', ControladorPos.Guardar);
+rutas.get('/create', ControladorPos.create);
 module.exports = rutas;
