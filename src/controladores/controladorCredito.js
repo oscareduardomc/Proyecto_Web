@@ -37,7 +37,7 @@ exports.Buscar = async (req, res) => {
   const {id} = await req.params;
   const credito = await Ventas_Credito.findOne({
     where:{
-      id:id
+      IdCredito:id
     },
     raw:true
   }).catch(error=>console.log(error))
