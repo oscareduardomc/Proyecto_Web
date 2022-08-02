@@ -1,35 +1,35 @@
 <h1>Edit Detalle</h1>
 <form action="http://localhost:4306/app/detalle/actualizar/{{detalle.idregistro}}" method="post"  >
-    <div >
+    <div class="form-group col-12">
         <label>Cantidad</label>
-        <input type="number" name="Cantidad" value="{{detalle.Cantidad}}" required class="">
+        <input type="number" class="form-control" name="Cantidad" value="{{detalle.Cantidad}}" required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Numero Factura</label>
-        <input type="number" name="NumeroFactura" value="{{detalle.NumeroFactura}}"  required class="">
+        <input type="number" class="form-control" name="NumeroFactura" value="{{detalle.NumeroFactura}}"  required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Codigo Producto</label>
-        <input type="number" name="CodigoProducto" value="{{detalle.CodigoProducto}}"  required class="">
+        <input type="number" class="form-control" name="CodigoProducto" value="{{detalle.CodigoProducto}}"  required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Precio</label>
-        <input type="number" name="Precio" value="{{detalle.Precio}}"  required class="">
+        <input type="number" class="form-control" name="Precio" value="{{detalle.Precio}}"  required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Precio Original</label>
-        <input type="number" name="preciooriginal" value="{{detalle.preciooriginal}}"  required class="">
+        <input type="number" class="form-control" name="preciooriginal" value="{{detalle.preciooriginal}}"  required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Grabado Exento</label>
-        <input type="number" name="grabadoExento" value="{{detalle.grabadoExento}}"  required class="">
+        <input type="number" class="form-control" name="grabadoExento" value="{{detalle.grabadoExento}}"  required class="">
     </div>
-    <div >
+    <div class="form-group col-12">
         <label>Impuesto</label>
-        <input type="number" name="impuesto" value="{{detalle.impuesto}}"  required class="">
+        <input type="number" class="form-control" name="impuesto" value="{{detalle.impuesto}}"  required class="">
     </div>
-    <button   type="submit" >Actualizar Detalle</button>
-    <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
+    <button class="btn btn-success m-2 col-2" type="submit" >Actualizar Detalle</button>
+    <input type="button" class="btn btn-info m-2 col-2" onclick="history.back()" name="volver atrás" value="volver atrás">
     <script>
         function alerta(){
         var cantidad = document.getElementById("cantidad").value; 
