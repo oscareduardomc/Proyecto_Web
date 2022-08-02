@@ -28,7 +28,8 @@
         <label>Impuesto</label>
         <input type="number" name="impuesto" value="{{detalle.impuesto}}" id="impuesto" required class="">
     </div>
-    <button  onclick="alerta()" type="submit" >Create Detalle</button>
+    <button  onclick="alerta()" type="submit" >Actualizar Detalle</button>
+    <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
     <script>
         function alerta(){
         var cantidad = document.getElementById("cantidad").value; 
