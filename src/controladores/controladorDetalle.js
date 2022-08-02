@@ -33,31 +33,39 @@ function validacion(req) {
 };
 
 exports.Listar = async (req, res) => {   //Esta es listar 
-  var msj = {
-    mensaje: ''
-  }
-  try {
+  // var msj = {
+  //   mensaje: ''
+  // }
+  // try {
 
 
-    req.getConnection((err, conn) => {
-      if (err) return res.send(err)
+  //   req.getConnection((err, conn) => {
+  //     if (err) return res.send(err)
 
-      conn.query('select idregistro, NumeroFactura, CodigoProducto, Cantidad, Precio, impuesto from detalle_venta', (err, rows) => {
-        if (err) return res.send(err)
+  //     conn.query('select idregistro, NumeroFactura, CodigoProducto, Cantidad, Precio, impuesto from detalle_venta', (err, rows) => {
+  //       if (err) return res.send(err)
+  //       console.log(rows)
+  //       // res.json(rows)
+  //       res.render('detalleListar', {
+  //         titulo: 'Detalle',
+  //         rows,
+  //     });
+  //     })
+  //   })
+  // } catch (error) {
+  //   console.error(error);
+  //   msj.mensaje = (error);
+  //   msj.mensaje = 'Ocurrio un error';
+  //   res.json(msj);
+  // }
 
-        res.json(rows)
-        res.render('detalleListar', {
-          titulo: 'Detalle',
-          rows,
-      });
-      })
-    })
-  } catch (error) {
-    console.error(error);
-    msj.mensaje = (error);
-    msj.mensaje = 'Ocurrio un error';
-    res.json(msj);
-  }
+  const lista = await Detalle.findAll();
+  // res.json(lista);
+  console.log(lista)
+  res.render('detalleListar', {
+    titulo: 'Detalle',
+    lista,
+  });
 }
 
 
