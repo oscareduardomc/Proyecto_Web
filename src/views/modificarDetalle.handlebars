@@ -1,34 +1,34 @@
 <h1>Edit Detalle</h1>
-<form action="http://localhost:4306/app/detalle/actualizar/{{detalle.id}}" method="post"  >
+<form action="http://localhost:4306/app/detalle/actualizar/{{detalle.idregistro}}" method="post"  >
     <div >
         <label>Cantidad</label>
-        <input type="number" name="cantidad" value="{{detalle.cantidad}}" id="cantidad" required class="">
+        <input type="number" name="Cantidad" value="{{detalle.Cantidad}}" required class="">
     </div>
     <div >
         <label>Numero Factura</label>
-        <input type="number" name="numeroFactura" value="{{detalle.numeroFactura}}" id="numerofactura" required class="">
+        <input type="number" name="NumeroFactura" value="{{detalle.NumeroFactura}}"  required class="">
     </div>
     <div >
         <label>Codigo Producto</label>
-        <input type="number" name="codigoProducto" value="{{detalle.codigoProducto}}" id="codigo" required class="">
+        <input type="number" name="CodigoProducto" value="{{detalle.CodigoProducto}}"  required class="">
     </div>
     <div >
         <label>Precio</label>
-        <input type="number" name="precio" value="{{detalle.precio}}" id="precio" required class="">
+        <input type="number" name="Precio" value="{{detalle.Precio}}"  required class="">
     </div>
     <div >
         <label>Precio Original</label>
-        <input type="number" name="preciooriginal" value="{{detalle.preciooriginal}}" id="preciooriginal" required class="">
+        <input type="number" name="preciooriginal" value="{{detalle.preciooriginal}}"  required class="">
     </div>
     <div >
         <label>Grabado Exento</label>
-        <input type="number" name="grabadoExento" value="{{detalle.grabadoExento}}" id="grabadoExento" required class="">
+        <input type="number" name="grabadoExento" value="{{detalle.grabadoExento}}"  required class="">
     </div>
     <div >
         <label>Impuesto</label>
-        <input type="number" name="impuesto" value="{{detalle.impuesto}}" id="impuesto" required class="">
+        <input type="number" name="impuesto" value="{{detalle.impuesto}}"  required class="">
     </div>
-    <button  onclick="alerta()" type="submit" >Actualizar Detalle</button>
+    <button   type="submit" >Actualizar Detalle</button>
     <input type="button" onclick="history.back()" name="volver atrás" value="volver atrás">
     <script>
         function alerta(){

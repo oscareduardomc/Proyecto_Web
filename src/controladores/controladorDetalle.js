@@ -43,9 +43,9 @@ exports.Listar = async (req, res) => {   //Esta es listar
 }
 
 exports.Actualizar = async (req, res) => {
-  const {id} = req.params;
-  const data = req.body;
-  const selector = {where:{id:id}}
+  const {idregistro} = await req.params;
+  const data =  req.body;
+  const selector = {where:{idregistro:idregistro} }
   await Detalle.update(data,selector).catch(error=>console.log(error))
   res.redirect('http://localhost:4306/app/detalle/listar')
 }
@@ -54,10 +54,10 @@ exports.create = async (req, res) => {
   res.render('detalleGuardar')
 }
 exports.Modificar = async (req, res) => {
-  const {id} = await req.params;
+  const {idregistro} = await req.params;
   const detalle = await Detalle.findOne({
     where:{
-      id:id
+      idregistro:idregistro
     },
     raw:true
   }).catch(error=>console.log(error))
