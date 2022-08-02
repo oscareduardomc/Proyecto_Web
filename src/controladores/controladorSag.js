@@ -121,3 +121,7 @@ exports.Guardar = async (req, res) => {
           console.log(pos)
         await res.redirect('http://localhost:4306/app/sag/listar');
 };
+
+exports.create = async (req, res) => {
+  res.render('sagGuardar')
+}
