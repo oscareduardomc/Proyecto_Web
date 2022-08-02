@@ -105,5 +105,5 @@ exports.Eliminar = async(req, res) => {
     raw:true
   }).catch(error=>console.log(error))
   
-  res.render('http://localhost:4306/app/detalle/listar')
+  res.redirect('http://localhost:4306/app/detalle/listar')
 };
