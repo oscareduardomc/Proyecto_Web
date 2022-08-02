@@ -1,4 +1,4 @@
-const Ventas = require('../modelos/modeloVentas');
+const Ventas = require('../modelos/modeloVenta');
 const { validationResult } = require('express-validator');
 const msjRes = require('../../src/componentes/mensaje');
 
@@ -78,7 +78,7 @@ exports.Guardar = async (req, res) => {
   const validaciones = validationResult(req);
   console.log(validaciones.errors[0]);
   console.log(req.body);
-  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, efectivo, tarjeta, mesero, estacion } = await req.body;  // const { nombre } = req.body;
+  const {  numeroFactura, idcai, idCliente, tipoPago, Usu, TEefectivo, tarjeta, mesero, estacion } = await req.body;  // const { nombre } = req.body;
   var msj = {
     mensaje: ''
   };
@@ -102,7 +102,7 @@ exports.Guardar = async (req, res) => {
           idCliente,
           tipoPago,
           Usu,
-          efectivo,
+          TEefectivo,
           tarjeta,
           mesero,
           estacion

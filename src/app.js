@@ -30,6 +30,10 @@ app.use('/app/detalle', require('./rutas/RutasDetalle'));
 app.use('/app/sag', require('./rutas/rutasSag'));
 app.use('/app/constancia', require('./rutas/rutasConstancia'));
 app.use('/app/credito', require('./rutas/rutasCredito'));
+app.use('/app/ventas', require('./rutas/rutasVentas'));
+app.use('/app/exenta', require('./rutas/rutasExenta'));
+app.use('/app/pos', require('./rutas/rutasPos'));
+app.use('/app/anuladas', require('./rutas/rutasAnuladas'));
 app.set('port',4306); 
 
 

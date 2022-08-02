@@ -3,14 +3,14 @@ const db = require('../configuracion/db');
 const ventas_anuladas = db.define(
     'ventas_anuladas',
     {
-        id:{
+        idventa:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
-            field: 'CodigoCargo' //Nombre del campo en la base de datos
+            field: 'idventa' //Nombre del campo en la base de datos
         },
-        usuarioId:{
+        usuario:{
             type: DataTypes.INTEGER,
             allowNull: false,
             field: 'usuario' //Nombre del campo en la base de datos
@@ -20,7 +20,7 @@ const ventas_anuladas = db.define(
             allowNull: false,
             field: 'descripcion' //Nombre del campo en la base de datos
         },
-        fechaHora:{
+        fechahora:{
             type: DataTypes.DATE,
             allowNull: false,
             field: 'fechahora' //Nombre del campo en la base de datos

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../configuracion/db');
 const ventas_pos = db.define(
-    'cargo',
+    'ventas_pos',
     {
         idRegistro:{
             type: DataTypes.INTEGER,
@@ -15,7 +15,7 @@ const ventas_pos = db.define(
             allowNull: false,
             field: 'idVenta' //Nombre del campo en la base de datos
         },
-        idPos:{
+        idpos:{
             type: DataTypes.INTEGER,
             allowNull: true,
             field: 'idpos' //Nombre del campo en la base de datos
@@ -25,7 +25,7 @@ const ventas_pos = db.define(
             allowNull: false,
             field: 'referencia' //Nombre del campo en la base de datos
         },
-        tarjeta:{
+        numerotarjeta:{
             type: DataTypes.STRING(45),
             allowNull: true,
             field: 'numerotarjeta' //Nombre del campo en la base de datos
@@ -35,12 +35,12 @@ const ventas_pos = db.define(
             allowNull: false,
             field: 'valor' //Nombre del campo en la base de datos
         },
-        propietario:{
+        nombrepropietario:{
             type: DataTypes.INTEGER,
             allowNull: true,
             field: 'nombrepropietario' //Nombre del campo en la base de datos
         },
-        idMarca:{
+        idmarca:{
             type: DataTypes.INTEGER,
             allowNull: true,
             field: 'idmarca' //Nombre del campo en la base de datos

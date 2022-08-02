@@ -38,7 +38,7 @@ const Venta = db.define(
         efectivo:{
             type: DataTypes.DOUBLE,
             allowNull: false,
-            field: 'TEefectivo' //Nombre del campo en la base de datos
+            field: 'TEfectivo' //Nombre del campo en la base de datos
         },
         tarjeta:{
             type: DataTypes.DOUBLE,
@@ -108,7 +108,7 @@ const Venta = db.define(
         impuesto18:{
             type: DataTypes.DOUBLE,
             allowNull: true,
-            field: 'Imppuesto18' //Nombre del campo en la base de datos
+            field: 'Impuesto18' //Nombre del campo en la base de datos
         },
         exonerado:{
             type: DataTypes.DOUBLE,
