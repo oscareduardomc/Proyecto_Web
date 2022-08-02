@@ -69,6 +69,9 @@ exports.Listar = async (req, res) => {   //Esta es listar
 }
 
 
+exports.create = async (req, res) => {
+  res.render('createDetalle')
+}
 
 
 exports.Guardar = async (req, res) => {
