@@ -68,161 +68,55 @@ exports.Listar = async (req, res) => {   //Esta es listar
 
 //GUARDAR
 
-
-
 exports.Guardar = async (req, res) => {
-    const validaciones = validationResult(req);
-    console.log(validaciones.errors[0]);
-    console.log(req.body);
-    const {  IdCredito, IdVenta, Activo } = req.body;
-    // const { nombre } = req.body;
-    var msj = {
-      mensaje: ''
-    };
-    if (validaciones.errors.length > 0) {
-      validaciones.errors.forEach(element => {
-        msj.mensaje += element.msg + ' . ';
+    // const validaciones = validationResult(req);
+    // console.log(validaciones.errors[0]);
+    // console.log(req.body);
+    // const {  IdCredito, IdVenta, Activo } = req.body;
+    // // const { nombre } = req.body;
+    // var msj = {
+    //   mensaje: ''
+    // };
+    // if (validaciones.errors.length > 0) {
+    //   validaciones.errors.forEach(element => {
+    //     msj.mensaje += element.msg + ' . ';
   
-      });
+    //   });
   
-    } else {
-      try {
-        if (!IdVenta) {
-          await Ventas_Credito.create({
-            IdVenta: IdVenta,
+    // } else {
+    //   try {
+    //     if (!IdVenta) {
+    //       await Ventas_Credito.create({
+    //         IdVenta: IdVenta,
   
-          });
-        } else {
-          await Ventas_Credito.create({
+    //       });
+    //     } else {
+    //       await Ventas_Credito.create({
   
-            idCredito: IdCredito,
-            idVenta: IdVenta,
-            Activo: Activo
-          });
-        }
+    //         idCredito: IdCredito,
+    //         idVenta: IdVenta,
+    //         Activo: Activo
+    //       });
+    //     }
   
-        msj.mensaje = 'Registro Guardado correctamente';
+    //     msj.mensaje = 'Registro Guardado correctamente';
   
-      } catch (error) {
-        console.error(error);
-        msj.mensaje = 'Error Al Guardar los Datos ';
-      }
+    //   } catch (error) {
+    //     console.error(error);
+    //     msj.mensaje = 'Error Al Guardar los Datos ';
+    //   }
   
-    }
-    res.json(msj);
+    // }
+    // res.json(msj);
+
+    const {  idCredito, idVenta, Activo } = await req.body;  // const { nombre } = req.body;
+  
+          const pos = await Ventas_Credito.create({
+  
+            idCredito,
+            idVenta,
+            Activo
+          }).catch(error=>console.log(error));
+          console.log(pos)
+        await res.redirect('http://localhost:4306/app/credito/listar');
 };
-  
-
-
-
-
-
-//MODIFICAR
-
-
-exports.Modificar = async(req, res) => {
-    const validaciones = validationResult(req);
-    console.log(validaciones.errors[0]);
-    console.log(req.body);
-    const { id } = req.query;
-    const { IdCredito, IdVenta, Activo } = req.body;
-  
-    const msj = {
-  
-        mensaje: ""
-  
-    };
-  
-    if (validaciones.errors.length > 0) {
-        validaciones.errors.forEach(element => {
-            msj.mensaje += element.msg + ' . ';
-  
-        });
-    } else {
-        try {
-  
-            var buscarCredito= await Ventas_Credito.findOne({
-                where: {
-                    IdCredito: id
-                }
-            });
-            if (!buscarCredito) {
-                buscarCredito.IdVenta = IdVenta;
-            } else {
-  
-                
-                if (!buscarCredito) {
-                    msj.mensaje = 'No Existe el  Codigo Ventas Credito Especificado';
-                } else {
-  
-                    buscarCredito.IdCredito = IdCredito;
-                    buscarCredito.IdVenta = IdVenta;
-                    buscarCredito.Activo = Activo;
-  
-                    await buscarCredito.save();
-                    msj.mensaje = 'Registro Modificado Correctamente!!';
-  
-                }
-  
-            }
-        } catch (error) {
-            console.error(error);
-            msj.mensaje = 'Error Al Modificar los Datos';
-        }
-    }
-    res.json(msj);
-};
-
-
-
-
-//ELIMINAR
-
-
-
-exports.Eliminar = async(req, res) => {
-    const validaciones = validationResult(req);
-    console.log(validaciones.errors[0]);
-    console.log(req.body);
-    const { id } = req.query;
-    const msj = {
-  
-        mensaje: ""
-  
-    };
-  
-    if (validaciones.errors.length > 0) {
-        validaciones.errors.forEach(element => {
-            msj.mensaje += element.msg + ' . ';
-  
-        });
-  
-    } else {
-        try {
-            var buscarCredito = await Ventas_Credito.findOne({
-                where: {
-                    IdCredito: id
-                }
-  
-            });
-            if (!buscarCredito) {
-                msj.mensaje = 'No Existe el ID Del Registro';
-            } else {
-                await buscarCredito.destroy({
-                    where: {
-                        IdCredito: id
-                    }
-  
-                });
-  
-                msj.mensaje = 'Registro Eliminado correctamente';
-            }
-        } catch (error) {
-            console.error(error);
-            msj.mensaje = 'ERROR!! Al Eliminar los Datos ';
-        }
-  
-    }
-    res.json(msj);
-  };
-  
