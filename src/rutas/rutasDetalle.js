@@ -8,5 +8,5 @@ rutas.get('/listar', ControladorDetalle.Listar);
 rutas.post('/guardar', ControladorDetalle.Guardar);
 rutas.post('/eliminar', ControladorDetalle.Eliminar);
 rutas.post('/modificar', ControladorDetalle.Modificar);
-
+rutas.get('/create', ControladorDetalle.create);
 module.exports = rutas;

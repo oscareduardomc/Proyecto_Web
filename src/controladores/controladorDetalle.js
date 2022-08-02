@@ -75,8 +75,7 @@ exports.Guardar = async (req, res) => {
   const validaciones = validationResult(req);
   console.log(validaciones.errors[0]);
   console.log(req.body);
-  const {  Cantidad, impuesto, grabadoExento, numerofactura, codigoProducto, Precio, preciooriginal } = req.body;
-  // const { nombre } = req.body;
+  const {  cantidad, impuesto, grabadoExento, numeroFactura, codigoProducto, precio, preciooriginal } = await req.body;  // const { nombre } = req.body;
   var msj = {
     mensaje: ''
   };
@@ -88,29 +87,42 @@ exports.Guardar = async (req, res) => {
 
   } else {
     try {
-      if (!Cantidad) {
+      if (!cantidad) {
         await Detalle.create({
-          cantidad: Cantidad,
+          cantidad,
 
         });
       } else {
         await Detalle.create({
 
-          cantidad: Cantidad,
-          numeroFactura: numerofactura,
-          codigoProducto: codigoProducto,
-          precio: Precio,
-          preciooriginal: preciooriginal,
-          impuesto: impuesto,
-          grabadoexento: grabadoExento
+          cantidad,
+          numeroFactura,
+          codigoProducto,
+          precio,
+          preciooriginal,
+          impuesto,
+          grabadoExento
         });
       }
 
       msj.mensaje = 'Registro Guardado correctamente';
-
+      console.log(cantidad)
+      console.log(numeroFactura)
+      console.log(codigoProducto)
+      console.log(precio)
+      console.log(preciooriginal)
+      console.log(impuesto)
+      console.log(grabadoExento)
     } catch (error) {
       console.error(error);
       msj.mensaje = 'Error Al Guardar los Datos ';
+      console.log(cantidad)
+      console.log(numeroFactura)
+      console.log(codigoProducto)
+      console.log(precio)
+      console.log(preciooriginal)
+      console.log(impuesto)
+      console.log(grabadoExento)
     }
 
   }
