@@ -3,14 +3,14 @@ const db = require('../configuracion/db');
 const VentasCredito = db.define(
     'ventacredito',
     {
-        idCredito:{
+        IdCredito:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: false,
             allowNull: false,
             field: 'IdCredito' //Nombre del campo en la base de datos
         },
-        idVenta:{
+        IdVenta:{
             type: DataTypes.STRING(20),
             allowNull: false,
             field: 'IdVenta' //Nombre del campo en la base de datos

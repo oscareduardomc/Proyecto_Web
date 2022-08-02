@@ -109,14 +109,18 @@ exports.Guardar = async (req, res) => {
     // }
     // res.json(msj);
 
-    const {  idCredito, idVenta, Activo } = await req.body;  // const { nombre } = req.body;
+    const {  IdCredito, IdVenta, Activo } = await req.body;  // const { nombre } = req.body;
   
-          const pos = await Ventas_Credito.create({
+          const credito = await Ventas_Credito.create({
   
-            idCredito,
-            idVenta,
+            IdCredito,
+            IdVenta,
             Activo
           }).catch(error=>console.log(error));
-          console.log(pos)
+          console.log(credito)
         await res.redirect('http://localhost:4306/app/credito/listar');
+};
+
+exports.create = async (req, res) => {
+  res.render('creditoGuardar')
 };
