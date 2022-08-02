@@ -1,36 +1,10 @@
 const Detalle = require('../modelos/modeloDetalle');
 const { validationResult } = require('express-validator');
 const msjRes = require('../../src/componentes/mensaje');
+var swal = require( 'sweetalert');
 
 
 
-function validacion(req) {
-  const validaciones = validationResult(req);
-  var errores = [];
-  var error = {
-    mensaje: '',
-    parametro: '',
-  };
-  var msj = {
-    estado: 'correcto',
-    mensaje: 'Peticion ejecutada correctamente',
-    datos: '',
-    errores: ''
-  };
-
-  if (validaciones.errors.length > 0) {
-    validaciones.errors.forEach(element => {
-      error.mensaje = element.msg;
-      error.parametro = element.param;
-      errores.push(error);
-    });
-    msj.estado = 'precaucion';
-    msj.mensaje = 'La peticion no se ejecuto';
-    msj.errores = errores;
-
-  }
-  return msj;
-};
 
 exports.Listar = async (req, res) => {   //Esta es listar 
   // var msj = {
@@ -68,35 +42,33 @@ exports.Listar = async (req, res) => {   //Esta es listar
   });
 }
 
+exports.Actualizar = async (req, res) => {
+  const {id} = req.params;
+  const data = req.body;
+  const selector = {where:{id:id}}
+  await Detalle.update(data,selector).catch(error=>console.log(error))
+  res.redirect('http://localhost:4306/app/detalle/listar')
+}
 
 exports.create = async (req, res) => {
   res.render('createDetalle')
 }
-
+exports.Modificar = async (req, res) => {
+  const {id} = await req.params;
+  const detalle = await Detalle.findOne({
+    where:{
+      id:id
+    },
+    raw:true
+  }).catch(error=>console.log(error))
+  res.render('modificarDetalle', {detalle})
+}
 
 exports.Guardar = async (req, res) => {
-  const validaciones = validationResult(req);
-  console.log(validaciones.errors[0]);
-  console.log(req.body);
-  const {  cantidad, impuesto, grabadoExento, numeroFactura, codigoProducto, precio, preciooriginal } = await req.body;  // const { nombre } = req.body;
-  var msj = {
-    mensaje: ''
-  };
-  if (validaciones.errors.length > 0) {
-    validaciones.errors.forEach(element => {
-      msj.mensaje += element.msg + ' . ';
 
-    });
-
-  } else {
-    try {
-      if (!cantidad) {
-        await Detalle.create({
-          cantidad,
-
-        });
-      } else {
-        await Detalle.create({
+  const {  cantidad, impuesto, grabadoExento, numeroFactura, codigoProducto, precio, preciooriginal } = await req.body;  
+  
+        const detalle = await Detalle.create({
 
           cantidad,
           numeroFactura,
@@ -105,94 +77,17 @@ exports.Guardar = async (req, res) => {
           preciooriginal,
           impuesto,
           grabadoExento
-        });
-      }
-
-      msj.mensaje = 'Registro Guardado correctamente';
-      console.log(cantidad)
-      console.log(numeroFactura)
-      console.log(codigoProducto)
-      console.log(precio)
-      console.log(preciooriginal)
-      console.log(impuesto)
-      console.log(grabadoExento)
-    } catch (error) {
-      console.error(error);
-      msj.mensaje = 'Error Al Guardar los Datos ';
-      console.log(cantidad)
-      console.log(numeroFactura)
-      console.log(codigoProducto)
-      console.log(precio)
-      console.log(preciooriginal)
-      console.log(impuesto)
-      console.log(grabadoExento)
-    }
+        }).catch(error=>console.log(error));
+        console.log(detalle)
+      await res.redirect('http://localhost:4306/app/detalle/listar');
 
   }
-  res.json(msj);
-};
 
 
-//MODIFICAR
 
 
-exports.Modificar = async(req, res) => {
-  const validaciones = validationResult(req);
-  console.log(validaciones.errors[0]);
-  console.log(req.body);
-  const { id } = req.query;
-  const { Cantidad, impuesto, grabadoExento, numeroFactura, codigoProducto, Precio, preciooriginal } = req.body;
 
-  const msj = {
 
-      mensaje: ""
-
-  };
-
-  if (validaciones.errors.length > 0) {
-      validaciones.errors.forEach(element => {
-          msj.mensaje += element.msg + ' . ';
-
-      });
-  } else {
-      try {
-
-          var buscarDetalle = await Detalle.findOne({
-              where: {
-                  idregistro: id
-              }
-          });
-          if (!buscarDetalle) {
-            buscarDetalle.cantidad = Cantidad;
-            buscarDetalle.codigoproducto = codigoProducto;
-          } else {
-
-              
-              if (!buscarDetalle) {
-                  msj.mensaje = 'No Existe el  Codigo de detalle Especificado';
-              } else {
-
-                buscarDetalle.cantidad = Cantidad;
-                buscarDetalle.codigoproducto = codigoProducto;
-                buscarDetalle.NumeroFactura = numeroFactura;
-                buscarDetalle.precio = Precio;
-                buscarDetalle.preciooriginal = preciooriginal;
-                buscarDetalle.impuesto = impuesto;
-                buscarDetalle.grabadoexento = grabadoExento;
-
-                  await buscarDetalle.save();
-                  msj.mensaje = 'Registro Modificado Correctamente!!';
-
-              }
-
-          }
-      } catch (error) {
-          console.error(error);
-          msj.mensaje = 'Error Al Modificar los Datos';
-      }
-  }
-  res.json(msj);
-};
 
 
 //ELIMINAR

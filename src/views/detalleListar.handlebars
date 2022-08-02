@@ -57,16 +57,12 @@
                       <td>
                         {{this.dataValues.impuesto}}
                       </td>
+                      <td>
+                        <a href="http://localhost:4306/app/detalle/modificar/{{this.dataValues.id}}"  class="nav-icon fas fa-pen"></a>
+                        
+                      </td>
                       </tr>
-                      <tr>
-                        <!-- code -->
-                      </tr>
-                      <tr>
-                        <!-- code -->
-                      </tr>
-                      <tr>
-                        <!-- code -->
-                      </tr>
+                      
                       {{/each}}
                       </tbody>
                     </table>
@@ -75,7 +71,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                  <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Generar nuevo pedido</a>
+                  <a href="http://localhost:4306/app/detalle/create" class="btn btn-sm btn-info float-left">Generar nuevo pedido</a>
                   <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Buscar pedido</a>
                 </div>
                 <!-- /.card-footer -->

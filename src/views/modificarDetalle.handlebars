@@ -1,0 +1,54 @@
+<h1>Edit Detalle</h1>
+<form action="http://localhost:4306/app/detalle/actualizar/{{detalle.id}}" method="post"  >
+    <div >
+        <label>Cantidad</label>
+        <input type="number" name="cantidad" value="{{detalle.cantidad}}" id="cantidad" required class="">
+    </div>
+    <div >
+        <label>Numero Factura</label>
+        <input type="number" name="numeroFactura" value="{{detalle.numeroFactura}}" id="numerofactura" required class="">
+    </div>
+    <div >
+        <label>Codigo Producto</label>
+        <input type="number" name="codigoProducto" value="{{detalle.codigoProducto}}" id="codigo" required class="">
+    </div>
+    <div >
+        <label>Precio</label>
+        <input type="number" name="precio" value="{{detalle.precio}}" id="precio" required class="">
+    </div>
+    <div >
+        <label>Precio Original</label>
+        <input type="number" name="preciooriginal" value="{{detalle.preciooriginal}}" id="preciooriginal" required class="">
+    </div>
+    <div >
+        <label>Grabado Exento</label>
+        <input type="number" name="grabadoExento" value="{{detalle.grabadoExento}}" id="grabadoExento" required class="">
+    </div>
+    <div >
+        <label>Impuesto</label>
+        <input type="number" name="impuesto" value="{{detalle.impuesto}}" id="impuesto" required class="">
+    </div>
+    <button  onclick="alerta()" type="submit" >Create Detalle</button>
+    <script>
+        function alerta(){
+        var cantidad = document.getElementById("cantidad").value; 
+        var numerofactura = document.getElementsByName("numerofactura")[0].value;
+        var codigo = document.getElementsByName("codigo")[0].value;
+        var precio = document.getElementsByName("precio")[0].value;
+    
+    
+    
+    
+    
+    if ((cantidad == "") || (numerofactura == "") || (codigo == "") || (precio == "") ) {  //COMPRUEBA CAMPOS VACIOS
+        alert("Los campos no pueden quedar vacios");
+        return true;
+    }else{
+        alert("Registro Guardado Exitosamente")
+    }
+        
+    }
+    </script>
+
+    
+</form>
