@@ -6,7 +6,5 @@ const rutas = Router();
 
 rutas.get('/listar', ControladorSag.Listar);
 rutas.post('/guardar', ControladorSag.Guardar);
-rutas.post('/eliminar', ControladorSag.Eliminar);
-rutas.post('/modificar', ControladorSag.Modificar);
 
 module.exports = rutas;
