@@ -68,8 +68,6 @@ exports.Listar = async (req, res) => {   //Esta es listar
 
 //GUARDAR
 
-
-
 exports.Guardar = async (req, res) => {
     // const validaciones = validationResult(req);
     // console.log(validaciones.errors[0]);
